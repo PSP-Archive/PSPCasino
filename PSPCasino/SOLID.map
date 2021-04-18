@@ -1,0 +1,577 @@
+
+Allocating common symbols
+Common symbol       size              file
+
+DeckCards           0x4               SOLID.o
+TrashCards          0x4               SOLID.o
+PlayerCards         0x4               SOLID.o
+g_GameState         0x4               SOLID.o
+g_StartCash         0x4               SOLID.o
+playdeck            0xd0              SOLID.o
+playerdeck          0xd0              SOLID.o
+dealerdeck          0xd0              SOLID.o
+g_CacheKey          0x4               SOLID.o
+g_MinsPlayed        0x4               SOLID.o
+decktemp            0x4               SOLID.o
+decktrash           0xd0              SOLID.o
+g_StartTick         0x4               SOLID.o
+g_GameCmd           0x4               SOLID.o
+GAMESTATES          0x4               SOLID.o
+g_CheatCash         0x4               SOLID.o
+DealerCards         0x4               SOLID.o
+g_Winner            0x4               SOLID.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+LOAD startup.o
+LOAD SOLID.o
+LOAD Graphics.o
+LOAD Controller.o
+Address of section .text set to 0x8900000
+                0x0000000000000000                _DYNAMIC_LINK = 0x0
+                0x0000000000100000                . = 0x100000
+
+.interp
+ *(.interp)
+
+.reginfo        0x0000000000100000       0x18
+ *(.reginfo)
+ .reginfo       0x0000000000100000       0x18 startup.o
+
+.hash
+ *(.hash)
+
+.dynsym
+ *(.dynsym)
+
+.dynstr
+ *(.dynstr)
+
+.gnu.version
+ *(.gnu.version)
+
+.gnu.version_d
+ *(.gnu.version_d)
+
+.gnu.version_r
+ *(.gnu.version_r)
+
+.rel.dyn
+ *(.rel.init)
+ *(.rel.text .rel.text.* .rel.gnu.linkonce.t.*)
+ *(.rel.fini)
+ *(.rel.rodata .rel.rodata.* .rel.gnu.linkonce.r.*)
+ *(.rel.data .rel.data.* .rel.gnu.linkonce.d.*)
+ *(.rel.tdata .rel.tdata.* .rel.gnu.linkonce.td.*)
+ *(.rel.tbss .rel.tbss.* .rel.gnu.linkonce.tb.*)
+ *(.rel.ctors)
+ *(.rel.dtors)
+ *(.rel.got)
+ *(.rel.sdata .rel.sdata.* .rel.gnu.linkonce.s.*)
+ *(.rel.sbss .rel.sbss.* .rel.gnu.linkonce.sb.*)
+ *(.rel.sdata2 .rel.sdata2.* .rel.gnu.linkonce.s2.*)
+ *(.rel.sbss2 .rel.sbss2.* .rel.gnu.linkonce.sb2.*)
+ *(.rel.bss .rel.bss.* .rel.gnu.linkonce.b.*)
+
+.rela.dyn
+ *(.rela.init)
+ *(.rela.text .rela.text.* .rela.gnu.linkonce.t.*)
+ *(.rela.fini)
+ *(.rela.rodata .rela.rodata.* .rela.gnu.linkonce.r.*)
+ *(.rela.data .rela.data.* .rela.gnu.linkonce.d.*)
+ *(.rela.tdata .rela.tdata.* .rela.gnu.linkonce.td.*)
+ *(.rela.tbss .rela.tbss.* .rela.gnu.linkonce.tb.*)
+ *(.rela.ctors)
+ *(.rela.dtors)
+ *(.rela.got)
+ *(.rela.sdata .rela.sdata.* .rela.gnu.linkonce.s.*)
+ *(.rela.sbss .rela.sbss.* .rela.gnu.linkonce.sb.*)
+ *(.rela.sdata2 .rela.sdata2.* .rela.gnu.linkonce.s2.*)
+ *(.rela.sbss2 .rela.sbss2.* .rela.gnu.linkonce.sb2.*)
+ *(.rela.bss .rela.bss.* .rela.gnu.linkonce.b.*)
+
+.rel.plt
+ *(.rel.plt)
+
+.rela.plt
+ *(.rela.plt)
+
+.init
+ *(.init)
+
+.plt
+ *(.plt)
+
+.text           0x0000000008900000     0x498c
+                0x0000000008900000                _ftext = .
+ *(.text .stub .text.* .gnu.linkonce.t.*)
+ .text          0x0000000008900000       0x88 startup.o
+                0x0000000008900078                __exit
+                0x0000000008900000                _start
+ .text.stub     0x0000000008900088      0x178 startup.o
+                0x00000000089001e0                sceKernelLibcClock
+                0x0000000008900190                sceAudio_1
+                0x0000000008900088                sceDisplaySetMode
+                0x0000000008900140                sceIoOpen
+                0x00000000089000a0                sceCtrlInit
+                0x00000000089001b0                sceAudio_5
+                0x0000000008900150                sceIoMkdir
+                0x00000000089000d8                sceKernelExitThread
+                0x0000000008900110                sceKernelClearEventFlag
+                0x00000000089001c0                sceAudio_7
+                0x00000000089001d8                sceKernelRegisterExitCallback
+                0x00000000089000d0                sceKernelStartThread
+                0x00000000089000a8                sceCtrlSetAnalogMode
+                0x0000000008900168                sceIoRename
+                0x0000000008900198                sceAudio_2
+                0x0000000008900098                sceDisplayWaitVblankStart
+                0x0000000008900188                sceAudio_0
+                0x00000000089000c0                sceKernelCreateCallback
+                0x00000000089000f8                sceKernelCreateEventFlag
+                0x00000000089000e0                sceKernelSleepThread
+                0x0000000008900128                sceIoWrite
+                0x0000000008900108                sceKernelSetEventFlag
+                0x00000000089001f0                sceKernelLibcGettimeofday
+                0x00000000089001a8                sceAudio_4
+                0x00000000089000f0                sceKernelDeleteThread
+                0x0000000008900118                sceKernelWaitEventFlag
+                0x00000000089000b8                sceKernelPollCallbacks
+                0x00000000089000c8                sceKernelCreateThread
+                0x00000000089001f8                sceKernelDcacheWritebackAll
+                0x0000000008900148                sceIoRemove
+                0x0000000008900120                sceIoRead
+                0x00000000089000e8                sceKernelWaitThreadEnd
+                0x0000000008900138                sceIoClose
+                0x0000000008900158                sceIoRmdir
+                0x00000000089001a0                sceAudio_3
+                0x00000000089001e8                sceKernelLibcTime
+                0x00000000089000b0                sceCtrlRead
+                0x0000000008900180                sceIoDclose
+                0x00000000089001b8                sceAudio_6
+                0x0000000008900130                sceIoLseek
+                0x0000000008900100                sceKernelDeleteEventFlag
+                0x0000000008900178                sceIoDread
+                0x00000000089001d0                sceKernelExitGame
+                0x0000000008900090                sceDisplaySetFrameBuf
+                0x0000000008900160                sceIoDevctl
+                0x00000000089001c8                sceAudio_8
+                0x0000000008900170                sceIoDopen
+ .text          0x0000000008900200     0x3734 SOLID.o
+                0x0000000008901a40                DisplayDealerHand
+                0x0000000008902f90                DrawCard
+                0x00000000089038ec                pgMain
+                0x00000000089002a0                ProcessGameCmd
+                0x0000000008901c38                DrawDebugInfo
+                0x0000000008901e9c                CacheKey
+                0x0000000008902a8c                CalcPlayer
+                0x0000000008902564                SettingsFile
+                0x0000000008900200                rand
+                0x0000000008901ef0                ProcessInput
+                0x00000000089038b8                pgExit
+                0x0000000008902c94                CalcDealer
+                0x0000000008901df8                DoDealerTurn
+                0x0000000008900274                srand
+                0x00000000089037d0                xmain
+                0x00000000089026ac                DetermineWinner
+                0x0000000008902e9c                BuildDeck
+                0x0000000008903424                PlayDeckShuffle
+                0x00000000089035fc                MasterShuffle
+                0x0000000008900860                DisplayGameInstructions
+                0x00000000089018b4                DisplayPlayerHand
+                0x0000000008900d18                DisplayCard
+ .text          0x0000000008903934      0xf8c Graphics.o
+                0x0000000008903a1c                pgGetVramAddr
+                0x0000000008903934                pgWaitVn
+                0x00000000089039c0                pgGetFrame
+                0x0000000008903990                pgWaitV
+                0x0000000008904394                NumberToAscii
+                0x0000000008904524                DRAW_LINE
+                0x0000000008903e28                pgBitBlt
+                0x0000000008903d94                pgFillvram
+                0x0000000008903cc4                pgPrint4
+                0x000000000890416c                pgScreenFrame
+                0x000000000890475c                BlendRGB
+                0x000000000890435c                pgScreenFlipV
+                0x0000000008903ad8                pgInit
+                0x0000000008903bf4                pgPrint2
+                0x0000000008903fa4                pgPutChar
+                0x0000000008903b24                pgPrint
+                0x00000000089042d4                pgScreenFlip
+ .text          0x00000000089048c0       0xcc Controller.o
+                0x000000000890493c                CTRL_GetAnalogAxis
+                0x00000000089048c0                CTRL_Init
+                0x0000000008904900                CTRL_GetKey
+ *(.gnu.warning)
+ *(.mips16.fn.*)
+ *(.mips16.call.*)
+
+.fini
+ *(.fini)
+                0x000000000890498c                PROVIDE (__etext, .)
+                0x000000000890498c                PROVIDE (_etext, .)
+                0x000000000890498c                PROVIDE (etext, .)
+
+.rodata         0x00000000089049a0    0x6b4dc
+ *(.rodata .rodata.* .gnu.linkonce.r.*)
+ .rodata.entrytable
+                0x00000000089049a0       0x14 startup.o
+ *fill*         0x00000000089049b4        0xc 00
+ .rodata        0x00000000089049c0       0x20 startup.o
+ .rodata.stubmodulename
+                0x00000000089049e0       0x84 startup.o
+ .rodata.stubidtable
+                0x0000000008904a64       0xbc startup.o
+ .rodata        0x0000000008904b20    0x6ab5c SOLID.o
+                0x000000000894b66c                img_10S
+                0x00000000089496a0                img_10H
+                0x0000000008917bb4                img_4D
+                0x00000000089338dc                img_7S
+                0x000000000890bcec                img_2S
+                0x000000000893b80c                img_8S
+                0x000000000893f7a4                img_9D
+                0x00000000089476d4                img_10D
+                0x0000000008905968                image_debug
+                0x0000000008925a48                img_6C
+                0x0000000008945708                img_10C
+                0x000000000894373c                img_9S
+                0x0000000008969360                img_QH
+                0x00000000089633fc                img_KS
+                0x00000000089515d0                img_AH
+                0x0000000008961430                img_KH
+                0x0000000008927a14                img_6D
+                0x0000000008959500                img_JH
+                0x0000000008955568                img_JC
+                0x000000000890fc84                img_3D
+                0x000000000892f944                img_7D
+                0x0000000008939840                img_8H
+                0x0000000008904dfc                image_btn_right
+                0x0000000008941770                img_9H
+                0x000000000891db18                img_5C
+                0x00000000089653c8                img_QC
+                0x0000000008905b68                image_anim1
+                0x000000000891bb4c                img_4S
+                0x0000000008905748                image_menubar
+                0x000000000895d498                img_KC
+                0x00000000089358a8                img_8C
+                0x0000000008904ca0                image_btn_down
+                0x0000000008907d54                img_2D
+                0x0000000008967394                img_QD
+                0x0000000008905528                image_btn_cross
+                0x0000000008904b20                image_btn_upx
+                0x000000000894d638                img_AC
+                0x000000000896d2f8                img_B
+                0x0000000008904ec8                image_btn_square
+                0x0000000008905308                image_btn_circle
+                0x000000000892d978                img_7C
+                0x0000000008923a7c                img_5S
+                0x0000000008915be8                img_4C
+                0x000000000892b9ac                img_6S
+                0x000000000895f464                img_KD
+                0x00000000089299e0                img_6H
+                0x000000000891fae4                img_5D
+                0x0000000008911c50                img_3H
+                0x0000000008937874                img_8D
+                0x000000000895359c                img_AS
+                0x0000000008921ab0                img_5H
+                0x0000000008909d20                img_2H
+                0x0000000008904d30                image_btn_left
+                0x000000000896b32c                img_QS
+                0x0000000008913c1c                img_3S
+                0x000000000893d7d8                img_9C
+                0x000000000894f604                img_AD
+                0x0000000008905d88                img_2C
+                0x0000000008919b80                img_4H
+                0x000000000895b4cc                img_JS
+                0x0000000008957534                img_JD
+                0x0000000008904c10                image_btn_up
+                0x0000000008931910                img_7H
+                0x000000000890dcb8                img_3C
+                0x00000000089050e8                image_btn_triangle
+ .rodata        0x000000000896f67c      0x800 Graphics.o
+                0x000000000896f67c                font
+
+.rodata1
+ *(.rodata1)
+
+.sdata2
+ *(.sdata2 .sdata2.* .gnu.linkonce.s2.*)
+
+.sbss2
+ *(.sbss2 .sbss2.* .gnu.linkonce.sb2.*)
+
+.eh_frame_hdr
+ *(.eh_frame_hdr)
+                0x000000000896fefc                . = (ALIGN (0x80) + (. & 0x7f))
+                0x000000000896fefc                . = ALIGN (0x4)
+                0x000000000896fefc                PROVIDE (__preinit_array_start, .)
+
+.preinit_array
+ *(.preinit_array)
+                0x000000000896fefc                PROVIDE (__preinit_array_end, .)
+                0x000000000896fefc                PROVIDE (__init_array_start, .)
+
+.init_array
+ *(.init_array)
+                0x000000000896fefc                PROVIDE (__init_array_end, .)
+                0x000000000896fefc                PROVIDE (__fini_array_start, .)
+
+.fini_array
+ *(.fini_array)
+                0x000000000896fefc                PROVIDE (__fini_array_end, .)
+
+.data           0x000000000896fefc       0xd0
+                0x000000000896fefc                _fdata = .
+ *(.data .data.* .gnu.linkonce.d.*)
+ .data          0x000000000896fefc       0xd0 SOLID.o
+                0x000000000896fefc                deck
+
+.lib.ent        0x000000000896ffcc       0x10
+ .lib.ent       0x000000000896ffcc       0x10 startup.o
+
+.lib.ent.btm    0x000000000896ffdc        0x4
+ .lib.ent.btm   0x000000000896ffdc        0x4 startup.o
+
+.lib.stub       0x000000000896ffe0       0x8c
+ .lib.stub      0x000000000896ffe0       0x8c startup.o
+
+.lib.stub.btm   0x000000000897006c        0x4
+ .lib.stub.btm  0x000000000897006c        0x4 startup.o
+
+.xodata.sceModuleInfo
+                0x0000000008970080       0x40
+ .xodata.sceModuleInfo
+                0x0000000008970080       0x40 startup.o
+
+.data1
+ *(.data1)
+
+.tdata
+ *(.tdata .tdata.* .gnu.linkonce.td.*)
+
+.tbss
+ *(.tbss .tbss.* .gnu.linkonce.tb.*)
+ *(.tcommon)
+
+.eh_frame
+ *(.eh_frame)
+
+.gcc_except_table
+ *(.gcc_except_table)
+
+.dynamic
+ *(.dynamic)
+
+.ctors
+ *crtbegin*.o(.ctors)
+ *(EXCLUDE_FILE(*crtend*.o) .ctors)
+ *(SORT(.ctors.*))
+ *(.ctors)
+
+.dtors
+ *crtbegin*.o(.dtors)
+ *(EXCLUDE_FILE(*crtend*.o) .dtors)
+ *(SORT(.dtors.*))
+ *(.dtors)
+
+.jcr
+ *(.jcr)
+                0x00000000089780b0                _gp = (ALIGN (0x10) + 0x7ff0)
+
+.got
+ *(.got.plt)
+ *(.got)
+
+.lit8
+ *(.lit8)
+
+.lit4
+ *(.lit4)
+
+.sdata          0x00000000089700c0       0x68
+ *(.sdata .sdata.* .gnu.linkonce.s.*)
+ .sdata         0x00000000089700c0       0x64 SOLID.o
+                0x00000000089700d0                g_automode
+                0x00000000089700c8                lastkey
+                0x00000000089700c0                g_Cash
+                0x00000000089700c4                g_Bet
+                0x00000000089700cc                g_Debug
+ .sdata         0x0000000008970124        0x4 Graphics.o
+                0x0000000008970128                _edata = .
+                0x0000000008970128                PROVIDE (edata, .)
+                0x0000000008970128                __bss_start = .
+                0x0000000008970128                _fbss = .
+
+.sbss           0x0000000008970128       0x44
+                0x0000000008970128                PROVIDE (__sbss_start, .)
+                0x0000000008970128                PROVIDE (___sbss_start, .)
+ *(.dynsbss)
+ *(.sbss .sbss.* .gnu.linkonce.sb.*)
+ .sbss          0x0000000008970128        0xc Graphics.o
+ *(.scommon)
+ .scommon       0x0000000008970134       0x38 SOLID.o
+                                          0x0 (size before relaxing)
+                0x0000000008970134                DeckCards
+                0x0000000008970138                TrashCards
+                0x000000000897013c                PlayerCards
+                0x0000000008970140                g_GameState
+                0x0000000008970144                g_StartCash
+                0x0000000008970148                g_CacheKey
+                0x000000000897014c                g_MinsPlayed
+                0x0000000008970150                decktemp
+                0x0000000008970154                g_StartTick
+                0x0000000008970158                g_GameCmd
+                0x000000000897015c                GAMESTATES
+                0x0000000008970160                g_CheatCash
+                0x0000000008970164                DealerCards
+                0x0000000008970168                g_Winner
+                0x000000000897016c                PROVIDE (__sbss_end, .)
+                0x000000000897016c                PROVIDE (___sbss_end, .)
+
+.bss            0x000000000897016c      0x740
+ *(.dynbss)
+ *(.bss .bss.* .gnu.linkonce.b.*)
+ .bss           0x000000000897016c      0x400 SOLID.o
+ *(COMMON)
+ COMMON         0x000000000897056c      0x340 SOLID.o
+                                          0x0 (size before relaxing)
+                0x000000000897056c                playdeck
+                0x000000000897063c                playerdeck
+                0x000000000897070c                dealerdeck
+                0x00000000089707dc                decktrash
+                0x00000000089708ac                . = ALIGN (0x4)
+                0x00000000089708ac                . = ALIGN (0x4)
+                0x00000000089708ac                _end = .
+                0x00000000089708ac                PROVIDE (end, .)
+
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.comment        0x0000000000000000       0x36
+ *(.comment)
+ .comment       0x0000000000000000       0x12 SOLID.o
+ .comment       0x0000000000000012       0x12 Graphics.o
+ .comment       0x0000000000000024       0x12 Controller.o
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges  0x0000000000000000       0x88
+ *(.debug_aranges)
+ .debug_aranges
+                0x0000000000000000       0x28 startup.o
+ .debug_aranges
+                0x0000000000000028       0x20 SOLID.o
+ .debug_aranges
+                0x0000000000000048       0x20 Graphics.o
+ .debug_aranges
+                0x0000000000000068       0x20 Controller.o
+
+.debug_pubnames
+                0x0000000000000000      0x74e
+ *(.debug_pubnames)
+ .debug_pubnames
+                0x0000000000000000      0x5f5 SOLID.o
+ .debug_pubnames
+                0x00000000000005f5      0x112 Graphics.o
+ .debug_pubnames
+                0x0000000000000707       0x47 Controller.o
+
+.debug_info     0x0000000000000000     0x2648
+ *(.debug_info .gnu.linkonce.wi.*)
+ .debug_info    0x0000000000000000       0x53 startup.o
+ .debug_info    0x0000000000000053     0x1af5 SOLID.o
+ .debug_info    0x0000000000001b48      0x8cc Graphics.o
+ .debug_info    0x0000000000002414      0x234 Controller.o
+
+.debug_abbrev   0x0000000000000000      0x5a2
+ *(.debug_abbrev)
+ .debug_abbrev  0x0000000000000000       0x10 startup.o
+ .debug_abbrev  0x0000000000000010      0x266 SOLID.o
+ .debug_abbrev  0x0000000000000276      0x22f Graphics.o
+ .debug_abbrev  0x00000000000004a5       0xfd Controller.o
+
+.debug_line     0x0000000000000000     0x1c0d
+ *(.debug_line)
+ .debug_line    0x0000000000000000       0x92 startup.o
+ .debug_line    0x0000000000000092     0x1509 SOLID.o
+ .debug_line    0x000000000000159b      0x5a9 Graphics.o
+ .debug_line    0x0000000000001b44       0xc9 Controller.o
+
+.debug_frame    0x0000000000000000      0x54c
+ *(.debug_frame)
+ .debug_frame   0x0000000000000000      0x2bc SOLID.o
+ .debug_frame   0x00000000000002bc      0x220 Graphics.o
+ .debug_frame   0x00000000000004dc       0x70 Controller.o
+
+.debug_str      0x0000000000000000      0xad8
+ *(.debug_str)
+ .debug_str     0x0000000000000000      0x932 SOLID.o
+                                        0x990 (size before relaxing)
+ .debug_str     0x0000000000000932      0x150 Graphics.o
+                                        0x227 (size before relaxing)
+ .debug_str     0x0000000000000a82       0x56 Controller.o
+                                        0x1c7 (size before relaxing)
+
+.debug_loc
+ *(.debug_loc)
+
+.debug_macinfo
+ *(.debug_macinfo)
+
+.debug_weaknames
+ *(.debug_weaknames)
+
+.debug_funcnames
+ *(.debug_funcnames)
+
+.debug_typenames
+ *(.debug_typenames)
+
+.debug_varnames
+ *(.debug_varnames)
+
+.gptab.sdata
+ *(.gptab.data)
+ *(.gptab.sdata)
+
+.gptab.sbss
+ *(.gptab.bss)
+ *(.gptab.sbss)
+OUTPUT(out elf32-littlemips)
+
+.pdr            0x0000000000000000      0x560
+ .pdr           0x0000000000000000       0x20 startup.o
+ .pdr           0x0000000000000020      0x2c0 SOLID.o
+ .pdr           0x00000000000002e0      0x220 Graphics.o
+ .pdr           0x0000000000000500       0x60 Controller.o
+
+.mdebug.eabi32  0x0000000000000000        0x0
